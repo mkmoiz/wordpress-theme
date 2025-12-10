@@ -1,0 +1,104 @@
+/**
+ * WooCommerce Custom Styles for Metaxchron Futurism
+ */
+
+/* General Wrapper */
+.woocommerce-page .site-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Buttons */
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    background-color: var(--mxc-primary-color);
+    color: #fff;
+    border-radius: 50rem; /* Rounded pill */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0.75rem 1.5rem;
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+    background-color: #fff;
+    color: var(--mxc-primary-color);
+    box-shadow: 0 0 10px var(--mxc-primary-color);
+}
+
+/* Products Grid */
+.woocommerce ul.products li.product {
+    background-color: var(--mxc-bg-card);
+    border: 1px solid var(--mxc-border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    color: var(--mxc-text-main);
+    font-family: var(--mxc-font-heading, 'Orbitron', sans-serif);
+    font-size: 1.1rem;
+    padding-top: 1rem;
+}
+
+.woocommerce ul.products li.product .price {
+    color: var(--mxc-primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Single Product */
+.woocommerce div.product .product_title {
+    font-family: var(--mxc-font-heading, 'Orbitron', sans-serif);
+    color: var(--mxc-text-main);
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+    color: var(--mxc-primary-color);
+}
+
+/* Cart & Checkout */
+.woocommerce table.shop_table {
+    border-radius: 0.5rem;
+    background-color: var(--mxc-bg-card);
+    border: 1px solid var(--mxc-border-color);
+}
+
+.woocommerce table.shop_table th {
+    color: var(--mxc-text-main);
+    font-family: var(--mxc-font-heading, 'Orbitron', sans-serif);
+}
+
+.woocommerce table.shop_table td {
+    border-top: 1px solid var(--mxc-border-color);
+}
+
+/* Messages */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+    background-color: var(--mxc-bg-card);
+    color: var(--mxc-text-main);
+    border-top: 3px solid var(--mxc-primary-color);
+}
+
+.woocommerce-info::before {
+    color: var(--mxc-primary-color);
+}
+
+/* Sidebar */
+.woocommerce-sidebar .widget-title {
+    font-family: var(--mxc-font-heading, 'Orbitron', sans-serif);
+}

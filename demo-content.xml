@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+ xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+ xmlns:content="http://purl.org/rss/1.0/modules/content/"
+ xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:wp="http://wordpress.org/export/1.2/">
+<channel>
+<title>Metaxchron Demo</title>
+<link>https://metaxchron.com</link>
+<language>en</language>
+<wp:wxr_version>1.2</wp:wxr_version>
+<wp:author><wp:author_id>1</wp:author_id><wp:author_login>admin</wp:author_login></wp:author>
+<wp:category><wp:term_id>1</wp:term_id><wp:cat_name>AI</wp:cat_name></wp:category>
+<wp:category><wp:term_id>2</wp:term_id><wp:cat_name>Space</wp:cat_name></wp:category>
+<wp:category><wp:term_id>3</wp:term_id><wp:cat_name>Future</wp:cat_name></wp:category>
+<item>
+<title>Artificial Consciousness Arrives</title>
+<wp:post_type>post</wp:post_type>
+<content:encoded><![CDATA[What happens when code begins to dream?]]></content:encoded>
+<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+<wp:status>publish</wp:status>
+</item>
+<item>
+<title>Terraforming in the 2040s</title>
+<wp:post_type>post</wp:post_type>
+<content:encoded><![CDATA[The long arc of planetary engineering.]]></content:encoded>
+<category domain="category" nicename="space"><![CDATA[Space]]></category>
+<wp:status>publish</wp:status>
+</item>
+<item>
+<title>Systems Beyond Biology</title>
+<wp:post_type>post</wp:post_type>
+<content:encoded><![CDATA[When silicon meets sentience.]]></content:encoded>
+<category domain="category" nicename="future"><![CDATA[Future]]></category>
+<wp:status>publish</wp:status>
+</item>
+</channel>
+</rss>
