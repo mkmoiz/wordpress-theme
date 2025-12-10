@@ -12,7 +12,7 @@
     <style>
         /* Minimal reset for blank canvas */
         body { background-color: #fff; color: #333; }
-        [data-theme="dark"] body { background-color: #121212; color: #e0e0e0; }
+        body[data-theme="dark"] { background-color: #121212; color: #e0e0e0; }
     </style>
 </head>
 <body <?php body_class(); ?>>

@@ -79,7 +79,7 @@ a:hover {
 }
 
 .border-bottom {
-    border-color: rgba(255,255,255,0.1) !important;
+    border-color: var(--mxc-border-color) !important;
 }
 
 /* =Cards
