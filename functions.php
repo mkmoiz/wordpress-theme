@@ -131,6 +131,16 @@ function mxc_setup() {
 add_action( 'after_setup_theme', 'mxc_setup' );
 
 /**
+ * Add lazy loading to custom logo.
+ */
+function mxc_custom_logo_attributes( $attr ) {
+    $attr['loading'] = 'eager'; // Logo is above fold, so eager is better than lazy, but explicit is good.
+    // Actually, WP lazy loads by default, so we might want to ensure it's NOT lazy for the logo.
+    return $attr;
+}
+add_filter( 'get_custom_logo_image_attributes', 'mxc_custom_logo_attributes' );
+
+/**
  * Register widget area.
  */
 function mxc_widgets_init() {
@@ -212,6 +222,9 @@ require get_template_directory() . '/inc/ajax-load-more.php';
 
 // Include Typography
 require get_template_directory() . '/inc/typography.php';
+
+// Include SEO Enhancements
+require get_template_directory() . '/inc/seo.php';
 
 // Include Breadcrumbs
 require get_template_directory() . '/inc/breadcrumbs.php';

@@ -39,3 +39,12 @@ function mxc_enqueue_fonts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'mxc_enqueue_fonts' );
+
+/**
+ * Add preconnect for Google Fonts.
+ */
+function mxc_preconnect_fonts() {
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+}
+add_action( 'wp_head', 'mxc_preconnect_fonts', 5 );
