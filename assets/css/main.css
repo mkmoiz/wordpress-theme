@@ -88,17 +88,43 @@ a:hover {
     background-color: var(--mxc-bg-card);
     border: 1px solid var(--mxc-border-color);
     color: var(--mxc-text-main);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Softer initial shadow */
+    backdrop-filter: blur(12px); /* Deeper glass effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 16px; /* Smooth corners */
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.card-body {
+    padding: 2rem; /* More breathing room */
+}
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
 }
 
 .card-title a {
-    color: var(--mxc-text-main); /* Was #fff, needs to adapt */
+    color: var(--mxc-text-main);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-title a:hover {
+    color: var(--mxc-primary-color);
 }
 
 .card-footer {
-    background-color: rgba(0,0,0,0.05) !important; /* Lighter for light mode compat */
+    background-color: rgba(255,255,255,0.02) !important;
     border-top: 1px solid var(--mxc-border-color) !important;
+    padding: 1rem 2rem;
 }
 
 [data-theme="light"] .card-footer {
@@ -158,6 +184,18 @@ a:hover {
     border-bottom: 1px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(16px);
     box-shadow: var(--mxc-surface-glow);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.site-content {
+    margin-top: 2rem; /* Ensure space from sticky nav */
+    padding-bottom: 4rem; /* Breathing room before footer */
+}
+
+/* Adjust top margin if navbar is fixed/sticky */
+body.admin-bar .site-header .navbar {
+    top: 32px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -710,3 +748,33 @@ code[class*="language-"], pre[class*="language-"] {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
+
+/* =Share Buttons
+-------------------------------------------------------------- */
+.mxc-share-buttons .glass-panel {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--mxc-border-color);
+}
+
+.btn-share {
+    border: 1px solid var(--mxc-border-color);
+    background: rgba(255,255,255,0.05);
+    color: var(--mxc-text-main);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-share:hover {
+    transform: translateY(-2px);
+    color: #fff;
+    border-color: transparent;
+}
+
+.btn-facebook:hover { background-color: #1877f2; box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4); }
+.btn-twitter:hover { background-color: #000; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); border-color: #333; }
+.btn-linkedin:hover { background-color: #0077b5; box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4); }
+.btn-email:hover { background-color: #ea4335; box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4); }

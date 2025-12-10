@@ -65,14 +65,7 @@ get_header(); ?>
                     </section>
 
                     <!-- Social Sharing -->
-                    <div class="card bg-light mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title h6">Share this post:</h5>
-                            <a href="<?php echo esc_url( 'https://www.facebook.com/sharer/sharer.php?u=' . urlencode( get_permalink() ) ); ?>" target="_blank" class="btn btn-sm btn-primary me-2"><i class="fab fa-facebook-f"></i> Facebook</a>
-                            <a href="<?php echo esc_url( 'https://x.com/intent/tweet?text=' . urlencode( get_the_title() ) . '&url=' . urlencode( get_permalink() ) ); ?>" target="_blank" class="btn btn-sm btn-dark text-white me-2"><i class="fab fa-x-twitter"></i> X</a>
-                            <a href="<?php echo esc_url( 'https://www.linkedin.com/shareArticle?mini=true&url=' . urlencode( get_permalink() ) . '&title=' . urlencode( get_the_title() ) ); ?>" target="_blank" class="btn btn-sm btn-primary" style="background-color: #0077b5; border-color: #0077b5;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                        </div>
-                    </div>
+                    <?php get_template_part( 'template-parts/share-buttons' ); ?>
 
                     <!-- Author Bio -->
                     <?php get_template_part( 'template-parts/author-bio' ); ?>
