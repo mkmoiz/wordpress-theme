@@ -1,24 +1,5 @@
 <?php
-/**
- * Map typography choices to safe stacks (no external fetch).
- */
-function mxc_get_font_stack_from_choice( $choice, $custom = '' ) {
-    $stacks = array(
-        'inter'         => "'Inter', 'Segoe UI', system-ui, sans-serif",
-        'poppins'       => "'Poppins', 'Segoe UI', system-ui, sans-serif",
-        'space_grotesk' => "'Space Grotesk', 'Segoe UI', system-ui, sans-serif",
-        'orbitron'      => "'Orbitron', 'Segoe UI', system-ui, sans-serif",
-        'serif'         => "'Georgia', 'Times New Roman', serif",
-        'mono'          => "'SFMono-Regular', 'Menlo', 'Consolas', monospace",
-        'system'        => "system-ui, -apple-system, 'Segoe UI', sans-serif",
-    );
-
-    if ( $choice === 'custom' && ! empty( $custom ) ) {
-        return esc_html( $custom );
-    }
-
-    return isset( $stacks[ $choice ] ) ? $stacks[ $choice ] : $stacks['system'];
-}
+// Helper for font stacks is now in inc/typography.php
 
 function mxc_enqueue_scripts() {
     // Bootstrap 5 CSS

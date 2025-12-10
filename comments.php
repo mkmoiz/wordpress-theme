@@ -51,6 +51,10 @@ if ( post_password_required() ) {
 
     endif; // Check for have_comments().
 
+    $commenter = wp_get_current_commenter();
+    $req = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+
     comment_form( array(
         'class_form'         => 'comment-form mt-5',
         'title_reply'        => __( 'Leave a Reply', 'metaxchron' ),
