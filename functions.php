@@ -7,6 +7,7 @@ function mxc_get_font_stack_from_choice( $choice, $custom = '' ) {
         'inter'         => "'Inter', 'Segoe UI', system-ui, sans-serif",
         'poppins'       => "'Poppins', 'Segoe UI', system-ui, sans-serif",
         'space_grotesk' => "'Space Grotesk', 'Segoe UI', system-ui, sans-serif",
+        'orbitron'      => "'Orbitron', 'Segoe UI', system-ui, sans-serif",
         'serif'         => "'Georgia', 'Times New Roman', serif",
         'mono'          => "'SFMono-Regular', 'Menlo', 'Consolas', monospace",
         'system'        => "system-ui, -apple-system, 'Segoe UI', sans-serif",

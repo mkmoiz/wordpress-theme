@@ -129,6 +129,7 @@ function mxc_customize_register( $wp_customize ) {
             'inter'         => __( 'Inter (modern)', 'metaxchron' ),
             'poppins'       => __( 'Poppins (rounded)', 'metaxchron' ),
             'space_grotesk' => __( 'Space Grotesk (tech)', 'metaxchron' ),
+            'orbitron'      => __( 'Orbitron (futuristic)', 'metaxchron' ),
             'serif'         => __( 'Classic Serif', 'metaxchron' ),
             'mono'          => __( 'Monospace', 'metaxchron' ),
             'system'        => __( 'System Default', 'metaxchron' ),

@@ -4,48 +4,6 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
-    <?php
-    $heading_choice = get_theme_mod( 'mxc_font_heading_choice', 'inter' );
-    $heading_custom = get_theme_mod( 'mxc_font_heading_custom', 'Inter' );
-    $body_choice    = get_theme_mod( 'mxc_font_body_choice', 'inter' );
-    $body_custom    = get_theme_mod( 'mxc_font_body_custom', 'Inter' );
-    $heading_stack  = mxc_get_font_stack_from_choice( $heading_choice, $heading_custom );
-    $body_stack     = mxc_get_font_stack_from_choice( $body_choice, $body_custom );
-    ?>
-    <style>
-        :root {
-            --mxc-primary-color: <?php echo get_theme_mod( 'mxc_primary_color', '#0d6efd' ); ?>;
-            --mxc-bg-dark: <?php echo get_theme_mod( 'mxc_bg_color', '#121212' ); ?>;
-            --mxc-bg-card: <?php echo get_theme_mod( 'mxc_card_bg_color', '#1e1e1e' ); ?>;
-            --mxc-headings-color: <?php echo get_theme_mod( 'mxc_headings_color', '#ffffff' ); ?>;
-            --mxc-body-color: <?php echo get_theme_mod( 'mxc_body_color', '#e0e0e0' ); ?>;
-            --mxc-link-color: <?php echo get_theme_mod( 'mxc_link_color', '#0d6efd' ); ?>;
-            --mxc-h1-size: <?php echo get_theme_mod( 'mxc_h1_size', '2.5' ); ?>rem;
-            --mxc-font-heading: <?php echo esc_html( $heading_stack ); ?>;
-            --mxc-font-body: <?php echo esc_html( $body_stack ); ?>;
-            --mxc-container-width: <?php echo get_theme_mod( 'mxc_container_width', '1320' ); ?>px;
-            --mxc-sidebar-width: <?php echo get_theme_mod( 'mxc_sidebar_width', '33' ); ?>%;
-        }
-        body {
-            font-size: <?php echo get_theme_mod( 'mxc_body_font_size', '16' ); ?>px;
-        }
-        .bg-primary-custom {
-            background-color: var(--mxc-primary-color) !important;
-        }
-        .text-primary-custom {
-            color: var(--mxc-primary-color) !important;
-        }
-        .btn-primary-custom {
-            background-color: var(--mxc-primary-color);
-            border-color: var(--mxc-primary-color);
-            color: #fff;
-        }
-        .btn-primary-custom:hover {
-            background-color: #0b5ed7; /* You might want to calculate a darker shade ideally */
-            border-color: #0a58ca;
-            color: #fff;
-        }
-    </style>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
