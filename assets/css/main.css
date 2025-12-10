@@ -650,3 +650,63 @@ code[class*="language-"], pre[class*="language-"] {
     text-shadow: none !important;
     font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
 }
+
+/* =Footer New Elements
+-------------------------------------------------------------- */
+.footer-menu {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-menu li a {
+    color: var(--mxc-text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-menu li a:hover {
+    color: var(--mxc-primary-color);
+}
+
+.transition-colors {
+    transition: color 0.3s ease;
+}
+
+.transition-colors:hover {
+    color: var(--mxc-primary-color) !important;
+}
+
+/* Scroll to Top */
+#mxc-scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+#mxc-scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#mxc-scroll-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}

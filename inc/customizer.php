@@ -97,6 +97,21 @@ function mxc_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'mxc_social_instagram', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( 'mxc_social_instagram', array( 'label' => 'Instagram URL', 'section' => 'mxc_footer_section', 'type' => 'url' ) );
 
+    $wp_customize->add_setting( 'mxc_social_linkedin', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'mxc_social_linkedin', array( 'label' => 'LinkedIn URL', 'section' => 'mxc_footer_section', 'type' => 'url' ) );
+
+    $wp_customize->add_setting( 'mxc_social_github', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'mxc_social_github', array( 'label' => 'GitHub URL', 'section' => 'mxc_footer_section', 'type' => 'url' ) );
+
+    $wp_customize->add_setting( 'mxc_social_youtube', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'mxc_social_youtube', array( 'label' => 'YouTube URL', 'section' => 'mxc_footer_section', 'type' => 'url' ) );
+
+    $wp_customize->add_setting( 'mxc_social_tiktok', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'mxc_social_tiktok', array( 'label' => 'TikTok URL', 'section' => 'mxc_footer_section', 'type' => 'url' ) );
+
+    $wp_customize->add_setting( 'mxc_show_scroll_top', array( 'default' => true, 'sanitize_callback' => 'mxc_sanitize_checkbox' ) );
+    $wp_customize->add_control( 'mxc_show_scroll_top', array( 'label' => __( 'Show Scroll to Top', 'metaxchron' ), 'section' => 'mxc_footer_section', 'type' => 'checkbox' ) );
+
 
     // 4. Global Design (Unified Appearance)
     $wp_customize->add_panel( 'mxc_global_design_panel', array(

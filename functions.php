@@ -90,9 +90,10 @@ function mxc_setup() {
     // Enable support for Post Thumbnails on posts and pages.
     add_theme_support( 'post-thumbnails' );
 
-    // This theme uses wp_nav_menu() in one location.
+    // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
         'primary' => esc_html__( 'Primary Menu', 'metaxchron' ),
+        'footer'  => esc_html__( 'Footer Menu', 'metaxchron' ),
     ) );
 
     // HTML5 support

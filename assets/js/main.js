@@ -11,13 +11,28 @@
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 
-    // Sticky Navbar Effect
+    // Sticky Navbar & Scroll Top Effect
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 50) {
+        var scrollTop = $(this).scrollTop();
+
+        if (scrollTop > 50) {
             $('.navbar').addClass('shadow-lg');
         } else {
             $('.navbar').removeClass('shadow-lg');
         }
+
+        // Scroll to Top visibility
+        if (scrollTop > 300) {
+            $('#mxc-scroll-top').addClass('visible');
+        } else {
+            $('#mxc-scroll-top').removeClass('visible');
+        }
+    });
+
+    // Scroll to Top Click
+    $('#mxc-scroll-top').on('click', function() {
+        $('html, body').animate({scrollTop: 0}, 800);
+        return false;
     });
 
     // Dark/Light Mode Toggle
