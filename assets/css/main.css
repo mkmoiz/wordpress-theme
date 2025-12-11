@@ -47,10 +47,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .display-1, .display-2, .display-3, .disp
     font-family: var(--mxc-font-heading, 'Inter', 'Segoe UI', system-ui, sans-serif);
     color: var(--mxc-headings-color, #fff);
     font-weight: 700;
-}
-
-h1, .display-1 {
-    font-size: var(--mxc-h1-size, 2.5rem);
+    line-height: var(--mxc-lh-heading);
+    letter-spacing: var(--mxc-ls-heading);
 }
 
 /* Premium Typography Tokens */
@@ -72,9 +70,12 @@ h1, .display-1 {
     }
 }
 
-.display-1 { font-size: var(--mxc-font-heading-xl); letter-spacing: -0.04em; }
-.display-2 { font-size: var(--mxc-font-heading-lg); letter-spacing: -0.03em; }
-.display-3 { font-size: var(--mxc-font-heading-md); letter-spacing: -0.02em; }
+h1, .h1, .display-1 { font-size: var(--mxc-font-heading-xl); letter-spacing: -0.04em; }
+h2, .h2, .display-2 { font-size: var(--mxc-font-heading-lg); letter-spacing: -0.03em; }
+h3, .h3, .display-3 { font-size: var(--mxc-font-heading-md); letter-spacing: -0.02em; }
+h4, .h4 { font-size: var(--mxc-font-heading-sm); }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
 a {
     color: var(--mxc-link-color, #0d6efd);
@@ -379,6 +380,16 @@ body.admin-bar .site-header .navbar {
 .card.flex-row .card-img-top {
     width: 40%;
     height: auto;
+}
+
+/* Dark Mode Image Dimming */
+[data-theme="dark"] img {
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] img:hover {
+    filter: brightness(1);
 }
 
 @media (max-width: 767.98px) {
@@ -1007,3 +1018,11 @@ code[class*="language-"], pre[class*="language-"] {
 .btn-twitter:hover { background-color: #000; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); border-color: #333; }
 .btn-linkedin:hover { background-color: #0077b5; box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4); }
 .btn-email:hover { background-color: #ea4335; box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4); }
+
+/* =Utility Classes
+-------------------------------------------------------------- */
+.mxc-text-primary { color: var(--mxc-primary-color) !important; }
+.mxc-bg-dark { background-color: var(--mxc-bg-dark) !important; }
+.mxc-bg-card { background-color: var(--mxc-bg-card) !important; }
+.mxc-rounded-sm { border-radius: 2px !important; }
+.mxc-shadow-flat { box-shadow: 0 1px 3px rgba(0,0,0,0.12) !important; }

@@ -66,6 +66,16 @@ a {
     border-color: var(--mxc-border-color);
 }
 
+/* Fix Block Margins */
+.wp-block {
+    margin-bottom: 2rem;
+}
+
+.wp-block-group {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 /* Light Mode Simulation (Optional, tough to toggle in editor context without extra JS) */
 [data-theme="light"] body {
     --mxc-bg-dark: #f8f9fa;
