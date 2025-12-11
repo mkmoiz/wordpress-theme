@@ -88,17 +88,17 @@ a:hover {
     background-color: var(--mxc-bg-card);
     border: 1px solid var(--mxc-border-color);
     color: var(--mxc-text-main);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Softer initial shadow */
-    backdrop-filter: blur(12px); /* Deeper glass effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    border-radius: 16px; /* Smooth corners */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12); /* Flat, sharp shadow */
+    backdrop-filter: none; /* Removed glass for solid high-contrast */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border-radius: 4px; /* Sharper corners for "Wired" look */
     overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-color: var(--mxc-primary-color); /* Highlight border on hover */
 }
 
 .card-body {
@@ -106,13 +106,14 @@ a:hover {
 }
 
 .card-title {
-    font-weight: 700;
+    font-weight: 800; /* Bolder headings */
     margin-bottom: 0.75rem;
-    line-height: 1.3;
+    line-height: 1.2;
+    letter-spacing: -0.02em; /* Tighter tracking */
 }
 
 .card-title a {
-    color: var(--mxc-text-main);
+    color: var(--mxc-headings-color); /* Use heading color for high contrast */
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -368,10 +369,10 @@ body.admin-bar .site-header .navbar {
     color: var(--mxc-text-muted);
 }
 .breadcrumb-item.active {
-    color: #fff;
+    color: var(--mxc-headings-color);
 }
 .breadcrumb-item + .breadcrumb-item::before {
-    color: rgba(255,255,255,0.3);
+    color: var(--mxc-border-color);
 }
 
 /* =Sidebar & Widgets
@@ -471,14 +472,35 @@ input:focus, textarea:focus {
     border-color: #555;
 }
 
-/* =Premium Surfaces & Badges
+/* =Editorial Elements
 -------------------------------------------------------------- */
 .glass-panel {
-    background: var(--mxc-glass);
+    background: var(--mxc-bg-card);
     border: 1px solid var(--mxc-border-color);
-    box-shadow: var(--mxc-surface-glow);
-    backdrop-filter: blur(16px);
-    border-radius: 16px;
+    box-shadow: none; /* Flat */
+    border-radius: 2px;
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid var(--mxc-primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--mxc-font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--mxc-headings-color);
+    line-height: 1.4;
+}
+
+/* Dropcap */
+.dropcap {
+    float: left;
+    font-size: 4rem;
+    line-height: 0.8;
+    margin-right: 0.15em;
+    color: var(--mxc-primary-color);
+    font-weight: 800;
 }
 
 /* Styled Tags (Chips) */
@@ -486,17 +508,17 @@ input:focus, textarea:focus {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.35rem 0.8rem;
-    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px; /* Tech/Square look */
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     background: transparent;
     border: 1px solid var(--mxc-border-color);
     color: var(--mxc-text-muted);
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .mxc-chip:hover, .badge:hover, .post-tags a:hover {
@@ -818,18 +840,23 @@ code[class*="language-"], pre[class*="language-"] {
 /* =Share Buttons
 -------------------------------------------------------------- */
 .mxc-share-buttons .glass-panel {
-    background: rgba(255,255,255,0.03);
+    background: transparent;
     border: 1px solid var(--mxc-border-color);
+    border-left: 4px solid var(--mxc-primary-color); /* Editorial accent */
+    border-radius: 2px;
 }
 
 .btn-share {
     border: 1px solid var(--mxc-border-color);
-    background: rgba(255,255,255,0.05);
+    background: transparent;
     color: var(--mxc-text-main);
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 2px; /* Square */
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
 }
