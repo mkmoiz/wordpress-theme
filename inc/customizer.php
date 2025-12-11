@@ -50,6 +50,49 @@ function mxc_customize_register( $wp_customize ) {
         'settings' => 'mxc_logo',
     ) ) );
 
+    // Retina Logo
+    $wp_customize->add_setting( 'mxc_logo_retina' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'mxc_logo_retina', array(
+        'label'       => __( 'Retina Logo (2x)', 'metaxchron' ),
+        'description' => __( 'Upload an image twice the size of the main logo for high-density screens.', 'metaxchron' ),
+        'section'     => 'mxc_logo_section',
+        'settings'    => 'mxc_logo_retina',
+    ) ) );
+
+    // Mobile Logo
+    $wp_customize->add_setting( 'mxc_logo_mobile' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'mxc_logo_mobile', array(
+        'label'       => __( 'Mobile Logo', 'metaxchron' ),
+        'description' => __( 'Optional alternative logo for smaller screens.', 'metaxchron' ),
+        'section'     => 'mxc_logo_section',
+        'settings'    => 'mxc_logo_mobile',
+    ) ) );
+
+    // Logo Width
+    $wp_customize->add_setting( 'mxc_logo_width', array( 'default' => '200', 'sanitize_callback' => 'absint' ) );
+    $wp_customize->add_control( 'mxc_logo_width', array(
+        'label'       => __( 'Logo Width (px)', 'metaxchron' ),
+        'section'     => 'mxc_logo_section',
+        'type'        => 'range',
+        'input_attrs' => array( 'min' => 50, 'max' => 500, 'step' => 5 ),
+    ) );
+
+    // Header Layout
+    $wp_customize->add_setting( 'mxc_header_layout', array(
+        'default'           => 'default',
+        'sanitize_callback' => 'mxc_sanitize_select',
+    ) );
+    $wp_customize->add_control( 'mxc_header_layout', array(
+        'label'    => __( 'Header Layout Style', 'metaxchron' ),
+        'section'  => 'mxc_logo_section',
+        'type'     => 'select',
+        'choices'  => array(
+            'default'  => __( 'Default (Logo Left, Nav Right)', 'metaxchron' ),
+            'centered' => __( 'Centered (Logo Top, Nav Bottom)', 'metaxchron' ),
+            'minimal'  => __( 'Minimal (Hamburger Menu)', 'metaxchron' ),
+        ),
+    ) );
+
     // 2. Primary Theme Color
     $wp_customize->add_section( 'mxc_colors_section' , array(
         'title'      => __( 'Theme Colors', 'metaxchron' ),

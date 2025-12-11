@@ -34,35 +34,66 @@
 
 <?php
 $header_layout = get_theme_mod( 'mxc_header_layout', 'default' );
-$nav_classes = 'navbar navbar-expand-lg navbar-dark shadow-sm';
+$logo_width    = get_theme_mod( 'mxc_logo_width', '200' );
+$nav_classes   = 'navbar navbar-expand-lg navbar-dark shadow-sm mxc-header-' . $header_layout;
+
 if ( $header_layout === 'transparent' && is_front_page() ) {
     $nav_classes .= ' position-absolute w-100 bg-transparent shadow-none';
     $nav_style = 'z-index: 1030;';
 } else {
     $nav_style = '';
 }
+
 $container_class = ( $header_layout === 'centered' ) ? 'container flex-column' : 'container';
-$menu_class = ( $header_layout === 'centered' ) ? 'navbar-nav mx-auto mb-2 mb-lg-0' : 'navbar-nav ms-auto mb-2 mb-lg-0';
+$menu_class      = ( $header_layout === 'centered' ) ? 'navbar-nav mx-auto mb-2 mb-lg-0' : 'navbar-nav ms-auto mb-2 mb-lg-0';
+
+// Logo Logic
+$logo_url        = get_theme_mod( 'mxc_logo' );
+$logo_retina     = get_theme_mod( 'mxc_logo_retina' );
+$logo_mobile     = get_theme_mod( 'mxc_logo_mobile' );
+$site_title      = get_bloginfo( 'name' );
 ?>
+
+<style>
+    .site-logo { width: <?php echo esc_attr( $logo_width ); ?>px; max-width: 100%; height: auto; }
+    @media (max-width: 767.98px) {
+        .site-logo { width: clamp(120px, <?php echo esc_attr( $logo_width * 0.8 ); ?>px, 100%); }
+    }
+</style>
 
 <header class="site-header">
     <nav class="<?php echo esc_attr( $nav_classes ); ?>" style="<?php echo esc_attr( $nav_style ); ?>">
         <div class="<?php echo esc_attr( $container_class ); ?>">
             <a class="navbar-brand fw-bold <?php echo ( $header_layout === 'centered' ) ? 'mb-3' : ''; ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <?php
-                $logo = get_theme_mod( 'mxc_logo' );
-                if ( $logo ) {
-                    echo '<img src="' . esc_url( $logo ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" height="40">';
-                } else {
-                    echo esc_html( get_bloginfo( 'name' ) );
-                }
-                ?>
+                <?php if ( $logo_url ) : ?>
+                    <picture>
+                        <?php if ( $logo_mobile ) : ?>
+                            <source media="(max-width: 575.98px)" srcset="<?php echo esc_url( $logo_mobile ); ?>">
+                        <?php endif; ?>
+
+                        <?php if ( $logo_retina ) : ?>
+                            <img src="<?php echo esc_url( $logo_url ); ?>" srcset="<?php echo esc_url( $logo_url ); ?> 1x, <?php echo esc_url( $logo_retina ); ?> 2x" alt="<?php echo esc_attr( $site_title ); ?>" class="site-logo">
+                        <?php else : ?>
+                            <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( $site_title ); ?>" class="site-logo">
+                        <?php endif; ?>
+                    </picture>
+                <?php else : ?>
+                    <span class="site-title"><?php echo esc_html( $site_title ); ?></span>
+                <?php endif; ?>
             </a>
+
+            <?php if ( $header_layout !== 'minimal' ) : ?>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mxcOffcanvas" aria-controls="mxcOffcanvas">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <?php else: ?>
+            <button class="btn btn-link text-white fs-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#mxcOffcanvas" aria-controls="mxcOffcanvas">
+                <i class="fas fa-bars"></i>
+            </button>
+            <?php endif; ?>
 
             <!-- Desktop Menu (Collapse for lg, hidden for sm) -->
+            <?php if ( $header_layout !== 'minimal' ) : ?>
             <div class="collapse navbar-collapse d-none d-lg-flex" id="mxcNavbarDesktop">
                 <?php
                 wp_nav_menu( array(
@@ -91,6 +122,13 @@ $menu_class = ( $header_layout === 'centered' ) ? 'navbar-nav mx-auto mb-2 mb-lg
                     </li>
                 </ul>
             </div>
+            <?php endif; // End check for minimal layout ?>
+
+            <?php if ( $header_layout === 'minimal' ) : ?>
+                <div class="ms-auto d-flex align-items-center">
+                     <button class="btn btn-link nav-link mxc-theme-toggle" type="button" aria-label="<?php esc_attr_e( 'Toggle theme', 'metaxchron' ); ?>"><i class="fas fa-sun"></i></button>
+                </div>
+            <?php endif; ?>
         </div>
     </nav>
 

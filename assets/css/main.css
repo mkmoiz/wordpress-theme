@@ -286,6 +286,22 @@ body.admin-bar .site-header .navbar {
     width: 100%;
 }
 
+/* Header Layouts */
+.mxc-header-centered .navbar-brand {
+    margin-right: 0;
+    margin-bottom: 1rem;
+}
+
+.mxc-header-centered .navbar-nav {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.mxc-header-minimal .navbar-brand {
+    margin-right: auto;
+}
+
 /* =Layout Variables
 -------------------------------------------------------------- */
 @media (min-width: 1400px) {
