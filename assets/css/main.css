@@ -161,16 +161,26 @@ a:hover {
     color: var(--mxc-text-main);
 }
 
+/* Force dark offcanvas in Light Mode */
+[data-theme="light"] .mxc-offcanvas {
+    background-color: #121212 !important;
+    color: #e0e0e0;
+}
+
 .mxc-offcanvas .nav-link {
     color: var(--mxc-text-main);
 }
 
+[data-theme="light"] .mxc-offcanvas .nav-link {
+    color: #e0e0e0;
+}
+
 .mxc-offcanvas .btn-close {
-    filter: invert(1);
+    filter: invert(1); /* Invert to white on dark bg */
 }
 
 [data-theme="light"] .mxc-offcanvas .btn-close {
-    filter: invert(0);
+    filter: invert(1); /* Keep inverted (white) because bg is forced dark */
 }
 
 .mxc-offcanvas a { color: inherit; }
@@ -220,13 +230,14 @@ body.admin-bar .site-header .navbar {
 }
 
 .breadcrumb-item a {
-    color: var(--mxc-text-main);
+    color: var(--mxc-text-muted); /* "Location text visible" */
     text-decoration: none;
     font-weight: 700;
 }
 
 .breadcrumb-item.active {
-    color: var(--mxc-text-muted);
+    color: var(--mxc-headings-color); /* "Title make it dark" */
+    font-weight: 800;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -365,15 +376,7 @@ body.admin-bar .site-header .navbar {
 
 /* =Breadcrumbs
 -------------------------------------------------------------- */
-.breadcrumb-item a {
-    color: var(--mxc-text-muted);
-}
-.breadcrumb-item.active {
-    color: var(--mxc-headings-color);
-}
-.breadcrumb-item + .breadcrumb-item::before {
-    color: var(--mxc-border-color);
-}
+/* Duplicate Removed */
 
 /* =Sidebar & Widgets
 -------------------------------------------------------------- */
