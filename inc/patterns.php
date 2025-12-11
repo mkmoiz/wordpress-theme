@@ -19,7 +19,8 @@ function mxc_register_block_patterns() {
         array(
             'title'       => __( 'Futurism Hero', 'metaxchron' ),
             'categories'  => array( 'mxc-hero' ),
-            'content'     => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"8rem","bottom":"8rem"}},"color":{"background":"#121212"}},"layout":{"type":"constrained"}} -->
+            'content'     => <<<'EOD'
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"8rem","bottom":"8rem"}},"color":{"background":"#121212"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="background-color:#121212;padding-top:8rem;padding-bottom:8rem"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column {"width":"60%"} -->
 <div class="wp-block-column" style="flex-basis:60%"><!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"4.5rem","fontWeight":"800","lineHeight":"1.1"}},"textColor":"white"} -->
@@ -47,7 +48,8 @@ function mxc_register_block_patterns() {
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group -->',
+<!-- /wp:group -->
+EOD
         )
     );
 
@@ -57,7 +59,8 @@ function mxc_register_block_patterns() {
         array(
             'title'       => __( 'Magazine Grid', 'metaxchron' ),
             'categories'  => array( 'mxc-magazine' ),
-            'content'     => '<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+            'content'     => <<<'EOD'
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide"><!-- wp:heading {"textAlign":"center","style":{"typography":{"textTransform":"uppercase","letterSpacing":"2px"}}} -->
 <h2 class="has-text-align-center" style="text-transform:uppercase;letter-spacing:2px">Latest Stories</h2>
 <!-- /wp:heading -->
@@ -99,7 +102,8 @@ function mxc_register_block_patterns() {
 <!-- /wp:paragraph --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
-<!-- /wp:group -->',
+<!-- /wp:group -->
+EOD
         )
     );
 
@@ -109,7 +113,8 @@ function mxc_register_block_patterns() {
         array(
             'title'       => __( 'Neon CTA', 'metaxchron' ),
             'categories'  => array( 'mxc-cta' ),
-            'content'     => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem"}},"border":{"width":"1px"}},"borderColor":"primary","backgroundColor":"dark-bg","layout":{"type":"constrained"}} -->
+            'content'     => <<<'EOD'
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem"}},"border":{"width":"1px"}},"borderColor":"primary","backgroundColor":"dark-bg","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-primary-border-color has-dark-bg-background-color has-background has-border-color" style="border-width:1px;padding-top:6rem;padding-bottom:6rem"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"3rem","fontWeight":"800"}}} -->
 <h2 class="has-text-align-center" style="font-size:3rem;font-weight:800">Ready to Upgrade?</h2>
 <!-- /wp:heading -->
@@ -123,7 +128,8 @@ function mxc_register_block_patterns() {
 <div class="wp-block-button has-custom-width wp-block-button__width-50 is-style-fill"><a class="wp-block-button__link" style="border-radius:0px">Subscribe Now</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
-<!-- /wp:group -->',
+<!-- /wp:group -->
+EOD
         )
     );
 }

@@ -72,6 +72,14 @@ function mxc_enqueue_fonts() {
 add_action( 'wp_enqueue_scripts', 'mxc_enqueue_fonts' );
 
 /**
+ * Backward Compatibility Helper
+ * Maps old simple font choices to stacks if needed.
+ */
+function mxc_get_font_stack_from_choice( $choice, $custom = '' ) {
+    return mxc_get_font_stack( $choice );
+}
+
+/**
  * Add preconnect hints.
  */
 function mxc_preconnect_fonts() {

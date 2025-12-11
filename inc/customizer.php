@@ -170,7 +170,10 @@ function mxc_customize_register( $wp_customize ) {
     ) );
 
     // Move Logo Section to Header Panel
-    $wp_customize->get_section( 'mxc_logo_section' )->panel = 'mxc_header_panel';
+    $logo_section = $wp_customize->get_section( 'mxc_logo_section' );
+    if ( $logo_section ) {
+        $logo_section->panel = 'mxc_header_panel';
+    }
 
     // Panel: Blog Settings
     $wp_customize->add_panel( 'mxc_blog_panel', array(
@@ -178,8 +181,14 @@ function mxc_customize_register( $wp_customize ) {
         'priority' => 55,
     ) );
 
+    // 6. Blog Pro
+    $wp_customize->add_section( 'mxc_blog_pro_section', array( 'title' => __( 'Blog / Archive Layout', 'metaxchron' ), 'priority' => 55 ) );
+
     // Move Blog Pro Section to Blog Panel
-    $wp_customize->get_section( 'mxc_blog_pro_section' )->panel = 'mxc_blog_panel';
+    $blog_section = $wp_customize->get_section( 'mxc_blog_pro_section' );
+    if ( $blog_section ) {
+        $blog_section->panel = 'mxc_blog_panel';
+    }
 
     // SECTION: Typography
     $wp_customize->add_section( 'mxc_typography_section', array(
@@ -294,8 +303,6 @@ function mxc_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'mxc_home_title', array( 'default' => __( 'Latest Posts', 'metaxchron' ), 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'mxc_home_title', array( 'label' => __( 'Homepage Heading', 'metaxchron' ), 'section' => 'mxc_homepage_section', 'type' => 'text' ) );
 
-    // 6. Blog Pro
-    $wp_customize->add_section( 'mxc_blog_pro_section', array( 'title' => __( 'Blog / Archive Layout', 'metaxchron' ), 'priority' => 55 ) );
     $wp_customize->add_setting( 'mxc_container_style', array( 'default' => 'boxed', 'sanitize_callback' => 'mxc_sanitize_select' ) );
     $wp_customize->add_control( 'mxc_container_style', array( 'label' => __( 'Container Style', 'metaxchron' ), 'section' => 'mxc_blog_pro_section', 'type' => 'select', 'choices' => array( 'boxed' => 'Boxed', 'unboxed' => 'Unboxed' ) ) );
 
