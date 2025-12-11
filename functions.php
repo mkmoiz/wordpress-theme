@@ -209,6 +209,9 @@ require get_template_directory() . '/inc/typography.php';
 // Include SEO Enhancements
 require get_template_directory() . '/inc/seo.php';
 
+// Include Gutenberg Support
+require get_template_directory() . '/inc/gutenberg.php';
+
 // Include Breadcrumbs
 require get_template_directory() . '/inc/breadcrumbs.php';
 
@@ -222,6 +225,14 @@ if ( class_exists( 'OCDI_Plugin' ) ) {
 
 // Include Review System
 require get_template_directory() . '/inc/review-system.php';
+
+// Plugin Integrations
+if ( class_exists( 'WPCF7' ) ) {
+    require get_template_directory() . '/inc/integrations/contact-form-7.php';
+}
+if ( class_exists( 'Elementor\Plugin' ) ) {
+    require get_template_directory() . '/inc/integrations/elementor.php';
+}
 
 // Add SEO Schema Markup
 function mxc_add_schema_markup() {

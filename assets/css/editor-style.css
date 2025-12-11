@@ -1,0 +1,75 @@
+/**
+ * Block Editor Styles
+ * Mimics main theme styles for accurate preview
+ */
+
+:root {
+    --mxc-bg-dark: #121212;
+    --mxc-bg-card: #1e1e1e;
+    --mxc-text-main: #e0e0e0;
+    --mxc-text-muted: #a0a0a0;
+    --mxc-border-color: rgba(255,255,255,0.08);
+    --mxc-primary-color: #0d6efd;
+    --mxc-headings-color: #ffffff;
+}
+
+body {
+    background-color: var(--mxc-bg-dark);
+    color: var(--mxc-text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* Editor Specific Overrides */
+.editor-styles-wrapper {
+    background-color: var(--mxc-bg-dark);
+    color: var(--mxc-text-main);
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--mxc-headings-color);
+    font-family: 'Orbitron', sans-serif; /* Default heading font */
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: var(--mxc-primary-color);
+}
+
+/* Blockquotes */
+.wp-block-quote {
+    border-left: 4px solid var(--mxc-primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--mxc-headings-color);
+    line-height: 1.4;
+}
+
+.wp-block-quote cite {
+    font-size: 0.875rem;
+    font-style: normal;
+    color: var(--mxc-text-muted);
+}
+
+/* Links */
+.wp-block-button__link {
+    border-radius: 4px; /* Sharp corners per new design */
+}
+
+/* Tables */
+.wp-block-table td, .wp-block-table th {
+    border-color: var(--mxc-border-color);
+}
+
+/* Light Mode Simulation (Optional, tough to toggle in editor context without extra JS) */
+[data-theme="light"] body {
+    --mxc-bg-dark: #f8f9fa;
+    --mxc-text-main: #212529;
+    --mxc-headings-color: #111111;
+    --mxc-border-color: rgba(0,0,0,0.1);
+}
